@@ -1,0 +1,10 @@
+{
+    "test_api_key": "replace me",
+    "live_api_key": "replace me",
+    "callback_url": "http://example.com/replace-me",
+    "attachment_type": "audio",
+    "attachment": "",
+    "verbatim": "False",
+    "test_callback_auth_key": "replace me",
+    "live_callback_auth_key": "replace me"
+}
