@@ -41,12 +41,9 @@ def get_log_filepath(conf):
     Default is `./tasks/`.
     """
     return next(
-        filter(
-            lambda ds: ds.get('type').lower() == 'file',
-            conf.get('datastores')
-            ),
+        filter(lambda ds: ds.get('type').lower() == 'file', conf.get('datastores')),
         {'location': './tasks/'}
-        ).get('location')
+    ).get('location')
 
 
 if __name__ == "__main__":
