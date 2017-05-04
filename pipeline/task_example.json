@@ -6,5 +6,16 @@
     "attachment": "replace me",
     "verbatim": "False",
     "test_callback_auth_key": "replace me",
-    "live_callback_auth_key": "replace me"
+    "live_callback_auth_key": "replace me",
+    "datastores": [
+      {
+        "type": "file",
+        "location": "./tasks/"
+      },
+      {
+        "type": "redis",
+        "url": "host",
+        "port": 6379
+      }
+    ]
 }

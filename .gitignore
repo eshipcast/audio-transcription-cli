@@ -87,3 +87,9 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# Actual task json used for production
+task.json
+
+# Ignore task create and result logs
+tasks/task_*.log

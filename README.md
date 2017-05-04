@@ -8,15 +8,15 @@ When making requests, they require a _callback url_, which is an endpoint you pr
 
 ## Structure
 
-The root directory contains `task_example.json`, which contains sample task and client/callback configuration parameters. If you don't want to change the default config file path, then once cloned, rename `task_example.json` to `task.json` and replace its values accordingly. It's in the root directory because it's used by both the client CLI and callback server.
+The main code is all in the `pipeline` directory. It also contains `task_example.json`, which contains sample task and client/callback configuration parameters. If you don't want to change the default config file path, then once cloned, rename `task_example.json` to `task.json` and replace the values accordingly. This configuration is shared by both the client CLI and callback server.
 
-The `server` directory contains a Flask application that will be listening for a POST request and will return a response.
+`server.py`, the callback server, is a Flask application that will be listening for a POST request from Scale API and will return a response.
 
-The `client` directory contains the CLI program that the user can use to POST transcription tasks to Scale API.
+`client.py` is a CLI program that the user can use to send transcription tasks to Scale API.
 
-The `client/tasks` directory contains logs for task creation and result events.
+The `tasks` directory contains logs for task creation and result events (i.e., all pertinent request data per request-response transaction between you and Scale API).
 
-The `tests` directory contains tests for both the client and server applications.
+The `tests` directory contains tests for the client and server applications.
 
 ## Usage
 
@@ -56,9 +56,9 @@ from which you should get
 python client.py --filename <path/to/config/file>
 ```
 
-When the `--filename` option is omitted, the default configuration path relative to the location of `client.py` is `../task.json`.
+When the `--filename` option is omitted, the default configuration path (relative to the location of `client.py`) is `./task.json`.
 
-Once this succeeds, you should see creation logs in the `client/tasks` directory. That has a short README on the output file format. And if the callback server was deployed correctly, the result logs should appear there, too.
+Once this succeeds, you should see creation logs in the `tasks` directory. That has a short README on the output file format. And if the callback server was deployed correctly, the result logs should show up there as well once the task finishes (whether it was successful or not).
 
 ## Testing
 
